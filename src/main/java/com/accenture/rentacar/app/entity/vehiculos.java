@@ -27,7 +27,29 @@ public class vehiculos {
 	private String marca;
 	private String linea;
 	private String color;
+	private String placa;
 	
+	
+	
+	public short getModeloAuto() {
+		return modeloAuto;
+	}
+
+
+	public void setModeloAuto(short modeloAuto) {
+		this.modeloAuto = modeloAuto;
+	}
+
+
+	public String getPlaca() {
+		return placa;
+	}
+
+
+	public void setPlaca(String placa) {
+		this.placa = placa;
+	}
+
 	@Column(name="fecha_creacion_registro")
 	@Temporal(TemporalType.DATE  )
 	private Date fechaCreacionRegistro;

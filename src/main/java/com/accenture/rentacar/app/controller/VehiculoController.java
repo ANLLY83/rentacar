@@ -1,6 +1,5 @@
 package com.accenture.rentacar.app.controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,59 +18,43 @@ import com.accenture.rentacar.app.service.VehiculoServiceImpl;
 @RequestMapping("/api")
 
 public class VehiculoController {
-	
+
 	@Autowired
-	private IVehiculoService  vehiculoService;
+	private IVehiculoService vehiculoService;
 
 	@GetMapping("/vehiculos")
 
-	public List<vehiculos> listar(){
-	return vehiculoService.listarTodosList();
-	
+	public List<vehiculos> listar() {
+		return vehiculoService.listarTodosList();
+
 	}
-	
 
 	@GetMapping("/vehiculos/(id)")
-
-	public vehiculos buscarPoId( @PathVariable Long id) {
-	return vehiculoService.buscarVehiculoPorId (id);
-
+	public vehiculos buscarPoId(@PathVariable Long id) {
+		return vehiculoService.buscarVehiculoPorId(id);
 
 	}
 
 	@PostMapping("/vehiculos")
-	public vehiculos guardar (@RequestBody vehiculos vehiculo) {
+	public vehiculos guardar(@RequestBody vehiculos vehiculos) {
 
-	return vehiculoService.guardar(vehiculo);
-	
+		return vehiculoService.guardar(vehiculos);
+
 	}
-			
-	
-	
-			
-		   @PostMapping ("/actualizar")
-			public vehiculos acualizar (@RequestBody vehiculos vehiculo)  (
-					
-					vehiculos VehiculoNuevo = new vehiculos();
-					
-					vehiculos vehiActualizar = vehiculoService.buscarVehiculoPorId.( vehiculo.getId());
-					vehiActualizar.setId(vehiculo.getId());
-					vehiActualizar.setColor( vehiculo.getColor());
-					vehiActualizar.setLinea ( vehiculo.getLinea());
-					vehiActualizar.setMarca ( vehiculo.getMarca());
-					vehiActualizar.setModelo ( vehiculo.getModelo());
-					
-					
-					return vehiculoService.guardar(vehiculos)
-					
-					
-					
-					
-					
-			
-			
-					
-						
+
+	@PostMapping("/actualizar")
+	public vehiculos actualizar(@RequestBody vehiculos vehiculos) {
+
+		vehiculos VehiculoNuevo = new vehiculos();
+		vehiculos vehiActualizar = vehiculoService.buscarVehiculoPorId(vehiculos.getId());
+		vehiActualizar.setId(vehiculos.getId());
+		vehiActualizar.setColor(vehiculos.getColor());
+		vehiActualizar.setLinea(vehiculos.getLinea());
+		vehiActualizar.setMarca(vehiculos.getMarca());
+		vehiActualizar.setModelo(vehiculos.getModelo());
+
+		return vehiculoService.guardar(vehiculos);
+
 	}
 
 }

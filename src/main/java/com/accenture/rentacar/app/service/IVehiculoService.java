@@ -11,10 +11,11 @@ public interface IVehiculoService {
 	
 	public vehiculos guardar(vehiculos vehiculos);
 	public void borrar(Long id);
-	public vehiculos buscarVehiculosporId(Long id);
+	public vehiculos buscarVehiculoPorId(Long id);
 	
 	
 	public List <vehiculos> listarTodosList();
+	
 	
 
 }
