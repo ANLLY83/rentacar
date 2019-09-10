@@ -1,5 +1,7 @@
 package com.accenture.rentacar.app.entity;
 
+
+
 import java.awt.List;
 import java.util.Date;
 
