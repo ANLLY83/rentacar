@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 
 
 @Entity
-@Table(name = Clientes_x_Vehiculo)
+@Table(name = "Clientes_Vehiculo")
 
 
 
@@ -33,23 +33,23 @@ public class ClienteVehiculo {
 	private long id;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	private Cliente cliente;
+	private ClienteVehiculo cliente;
 	
     @OneToMany
 	
-	private List Vehiculo <vehiculos> vehiculos;
+	private java.util.List<vehiculos>  vehiculos;
 	
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name "fecha_Creacion_Registro");
+	@Column(name =  "fecha_Creacion_Registro")
 	private Date fechaCreacionRegistro;
 	
 	
 	private String observaciones;
 	
 	@PrePersist
-	public void prePersist( ) {
-		fechaCreacionRegistro = new Date(;)
+	public void prePersist() {
+		fechaCreacionRegistro = new Date();
 				
 				
 				
@@ -63,20 +63,20 @@ public class ClienteVehiculo {
 		this.id = id;
 	}
 
-	public Cliente getCliente() {
+	public ClienteVehiculo getCliente() {
 		return cliente;
 	}
 
-	public void setCliente(Cliente cliente) {
+	public void setCliente(ClienteVehiculo cliente) {
 		this.cliente = cliente;
 	}
 
 	public List getVehiculo() {
-		return Vehiculo;
+		return (List) vehiculos ;
 	}
 
 	public void setVehiculo(List vehiculo) {
-		Vehiculo = vehiculo;
+		vehiculos = vehiculo;
 	}
 
 	public Date getFechaCreacionRegistro() {

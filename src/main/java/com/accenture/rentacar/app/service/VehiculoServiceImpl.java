@@ -1,6 +1,8 @@
 package com.accenture.rentacar.app.service;
 
 
+import java.util.ArrayList;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,4 +44,26 @@ return (List<vehiculos>) vehiculoDao.findAll();
 
 }
 
+
+@Override
+public List<vehiculos> guardarVarios(Vehiculo[] vehiculos) {
+	List<vehiculos> retorno = new ArrayList<vehiculos>();
+	
+
+	for ( vehiculos vehiculos : vehiculos) {
+		retorno.add (vehiculoDao.save(vehiculos) );
+		
+		
+	}
+	for( int i = 0; i < vehiculos.length; i++ )
+	{
+		
+		retorno.add(vehiculoDao.save(vehiculos[i]));
+	}
+	}
+	
+	return retorno;
 }
+
+}
+

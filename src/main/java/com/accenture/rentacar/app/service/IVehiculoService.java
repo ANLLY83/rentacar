@@ -16,6 +16,5 @@ public interface IVehiculoService {
 	
 	public List <vehiculos> listarTodosList();
 	
-	
-
+	public List <vehiculos> listrTodosList();
 }
