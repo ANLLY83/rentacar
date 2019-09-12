@@ -17,12 +17,14 @@ public class UtilDate {
 			
 		
 		}
-		catch(SQLException e) {
+		catch(Exception e) {
 			throw e;
 			
 		}
 		
-		catch(Exception e) {
+		
+		
+		catch(ExceptionInInitializerError e) {
 			throw e;
 			
 			
@@ -30,5 +32,8 @@ public class UtilDate {
 		finally {
 		
 	}
-
+		
+		
+}
+	
 }

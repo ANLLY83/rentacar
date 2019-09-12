@@ -17,4 +17,5 @@ public interface IVehiculoService {
 	public List <vehiculos> listarTodosList();
 	
 	public List <vehiculos> listrTodosList();
+	public List<vehiculos> guardarVariosList(vehiculos[] vehiculos);
 }

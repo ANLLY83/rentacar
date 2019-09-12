@@ -41,7 +41,7 @@ public class VehiculoController {
 		return vehiculoService.guardar(vehiculos);
 		
 		@PostMapping("varios-vehiculos" )
-		public List<Vehiculos> ( @RequestBody vehiculos[] vehiculos)
+		public List<vehiculos> @RequestBody (vehiculos[] vehiculos)
 		return vehiculoService.guardarVarios(vehiculos);
 
 	}

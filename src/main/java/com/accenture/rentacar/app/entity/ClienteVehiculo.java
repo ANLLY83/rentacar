@@ -76,7 +76,7 @@ public class ClienteVehiculo {
 	}
 
 	public void setVehiculo(List vehiculo) {
-		vehiculos = vehiculo;
+		vehiculos = vehiculos;
 	}
 
 	public Date getFechaCreacionRegistro() {

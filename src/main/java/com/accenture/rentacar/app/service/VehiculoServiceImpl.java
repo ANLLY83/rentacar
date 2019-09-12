@@ -46,13 +46,12 @@ return (List<vehiculos>) vehiculoDao.findAll();
 
 
 @Override
-public List<vehiculos> guardarVarios(Vehiculo[] vehiculos) {
+public List<vehiculos> guardarVariosList(vehiculos[] vehiculos) {
 	List<vehiculos> retorno = new ArrayList<vehiculos>();
 	
 
-	for ( vehiculos vehiculos : vehiculos) {
-		retorno.add (vehiculoDao.save(vehiculos) );
-		
+	for ( vehiculos vehiculos2 : vehiculos) {
+		retorno.add (vehiculoDao.save(vehiculos ));
 		
 	}
 	for( int i = 0; i < vehiculos.length; i++ )
@@ -61,6 +60,12 @@ public List<vehiculos> guardarVarios(Vehiculo[] vehiculos) {
 		retorno.add(vehiculoDao.save(vehiculos[i]));
 	}
 	}
+
+@Override
+public List<vehiculos> listrTodosList() {
+	// TODO Auto-generated method stub
+	return null;
+
 	
 	return retorno;
 }
